@@ -8,8 +8,6 @@
 
 - 熟悉Qt框架，踩过几年的坑
 
-- 喜欢用Qml，写组件、造轮子 信手拈来
-
 - 乐于助人，你的问题碰巧我知道，如此便好
 
 [![github stats](https://github-readme-stats.vercel.app/api?username=jaredtao&hide=contribs&show_icons=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
