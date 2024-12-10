@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="涛哥的博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://jaredtao.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="C++ Qt Quick Qml" />
+
+
+<meta name="description" content="
+title: 玩转Qt(16)-自动属性photos: /img/avatar.jpgtags:
+
+Qt
+Qt实用技能categories: 玩转Qtdate: 2024-12-9 19:44..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Qt/玩转Qt(16)-自动属性 |
+    
+    涛哥的博客
+</title>
+
+<link rel="alternate" href="/atom.xml" title="涛哥的博客" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<script>
+(function() {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://snippet.shenliyang.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='JaredTao'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                单枪匹马亦对饮，历经磨难记初心
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://jaredtao.github.io">
+                        涛哥的博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/玩转Qt/"><i class="fa "></i>
+                                玩转Qt</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/玩转Qml/"><i class="fa "></i>
+                                玩转Qml</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/玩转QtQuick/"><i class="fa "></i>
+                                玩转QtQuick</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/涛哥的博客/"><i class="fa "></i>
+                                涛哥的博客</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Qt/玩转Qt(16)-自动属性">
+            
+            Qt/玩转Qt(16)-自动属性
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2024/12/09</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <hr>
+<p>title: 玩转Qt(16)-自动属性<br>photos: /img/avatar.jpg<br>tags:</p>
+<ul>
+<li>Qt</li>
+<li>Qt实用技能<br>categories: 玩转Qt<br>date: 2024-12-9 19:44:23</li>
+</ul>
+<ul>
+<li><a href="#简介">简介</a><ul>
+<li><a href="#痛点">痛点</a></li>
+<li><a href="#解决方案">解决方案</a></li>
+<li><a href="#原理">原理</a><ul>
+<li><a href="#qobject属性">QObject属性</a><ul>
+<li><a href="#常规类成员函数">常规类成员函数</a></li>
+<li><a href="#qt加的特殊标记">Qt加的特殊标记</a></li>
+<li><a href="#set函数的通知">set函数的通知</a></li>
+</ul>
+</li>
+<li><a href="#搞一套宏">搞一套宏</a><ul>
+<li><a href="#简易成员函数的宏">简易成员函数的宏</a></li>
+<li><a href="#qt信号槽的宏">Qt信号槽的宏</a></li>
+<li><a href="#浮点数比较大小">浮点数比较大小</a></li>
+</ul>
+</li>
+<li><a href="#运行环境适配">运行环境适配</a></li>
+</ul>
+</li>
+<li><a href="#源代码">源代码</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这次分享QObject属性的自动生成。</p>
+<p>Qt的QObject，拥有强大的属性系统，这个属性系统在Qt各处都能见到运用。</p>
+<p>例如： QWidget自定义控件，在designer中可视化配置属性；在qss中控制样式； 在qml中进行属性绑定；</p>
+<p>在Q-DBus中进行数据通知；在WebChannel中与js进行同步 等等。</p>
+<h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><p>Qt的属性系统应用相当广泛，但是也有一些弊端，其中之一便是Q_PROPERTY及相应代码比较长。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppInfo_Old</span> :</span> <span class="keyword">public</span> QObject</span><br><span class="line">&#123;</span><br><span class="line">	Q_OBJECT</span><br><span class="line"></span><br><span class="line">	Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString appVersion READ appVersion WRITE setAppVersion NOTIFY appVersionChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString lasterVersion READ lasterVersion WRITE setLasterVersion NOTIFY lasterVersionChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString buildDateTime READ buildDateTime WRITE setBuildDateTime NOTIFY buildDateTimeChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString buildRevision READ buildRevision WRITE setBuildRevision NOTIFY buildRevisionChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString copyRight READ copyRight WRITE setCopyRight NOTIFY copyRightChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString descript READ descript WRITE setDescript NOTIFY descriptChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString compilerVendor READ compilerVendor WRITE setCompilerVendor NOTIFY compilerVendorChanged FINAL)</span><br><span class="line">	Q_PROPERTY(<span class="keyword">bool</span> splashShow READ splashShow WRITE setSplashShow NOTIFY splashShowChanged FINAL)</span><br><span class="line">	Q_PROPERTY(<span class="keyword">float</span> scale READ scale WRITE setScale NOTIFY scaleChanged FINAL)</span><br><span class="line">	Q_PROPERTY(<span class="keyword">double</span> ratio READ ratio WRITE setRatio NOTIFY ratioChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QStringList customs READ customs WRITE setCustoms NOTIFY customsChanged FINAL)</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="title">AppInfo_Old</span><span class="params">(QObject* parent = <span class="literal">nullptr</span>)</span></span>;</span><br><span class="line">	<span class="keyword">virtual</span> ~AppInfo_Old() <span class="keyword">override</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>比如说有这样一个QObject对象, 它有十多个属性。</p>
+<p>为此我们需要先写上十多条Q_PROPERTY，然后再为每一条写上对应的set函数、get函数和changed信号。</p>
+<p>可以手动敲，也可以使用QtCreator的快捷生成功能。</p>
+<p><img src="/images/Qt16/img2.png" alt="预览"><br><img src="/images/Qt16/img3.png" alt="预览"></p>
+<p>全部完成后，代码变得很长很长，看着都很费劲。</p>
+<p>在这样的代码上进行修改会非常的痛苦。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppInfo_Old</span> :</span> <span class="keyword">public</span> QObject</span><br><span class="line">&#123;</span><br><span class="line">	Q_OBJECT</span><br><span class="line"></span><br><span class="line">	Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString appVersion READ appVersion WRITE setAppVersion NOTIFY appVersionChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString lasterVersion READ lasterVersion WRITE setLasterVersion NOTIFY lasterVersionChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString buildDateTime READ buildDateTime WRITE setBuildDateTime NOTIFY buildDateTimeChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString buildRevision READ buildRevision WRITE setBuildRevision NOTIFY buildRevisionChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString copyRight READ copyRight WRITE setCopyRight NOTIFY copyRightChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString descript READ descript WRITE setDescript NOTIFY descriptChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QString compilerVendor READ compilerVendor WRITE setCompilerVendor NOTIFY compilerVendorChanged FINAL)</span><br><span class="line">	Q_PROPERTY(<span class="keyword">bool</span> splashShow READ splashShow WRITE setSplashShow NOTIFY splashShowChanged FINAL)</span><br><span class="line">	Q_PROPERTY(<span class="keyword">float</span> scale READ scale WRITE setScale NOTIFY scaleChanged FINAL)</span><br><span class="line">	Q_PROPERTY(<span class="keyword">double</span> ratio READ ratio WRITE setRatio NOTIFY ratioChanged FINAL)</span><br><span class="line">	Q_PROPERTY(QStringList customs READ customs WRITE setCustoms NOTIFY customsChanged FINAL)</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="title">AppInfo_Old</span><span class="params">(QObject* parent = <span class="literal">nullptr</span>)</span></span>;</span><br><span class="line">	<span class="keyword">virtual</span> ~AppInfo_Old() <span class="keyword">override</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">QString <span class="title">name</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">setName</span><span class="params">(<span class="keyword">const</span> QString&amp; newName)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">QString <span class="title">appVersion</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">setAppVersion</span><span class="params">(<span class="keyword">const</span> QString&amp; newAppVersion)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">QString <span class="title">lasterVersion</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">setLasterVersion</span><span class="params">(<span class="keyword">const</span> QString&amp; newLasterVersion)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">QString <span class="title">buildDateTime</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">setBuildDateTime</span><span class="params">(<span class="keyword">const</span> QString&amp; newBuildDateTime)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">QString <span class="title">buildRevision</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">setBuildRevision</span><span class="params">(<span class="keyword">const</span> QString&amp; newBuildRevision)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">QString <span class="title">copyRight</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">setCopyRight</span><span class="params">(<span class="keyword">const</span> QString&amp; newCopyRight)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">QString <span class="title">descript</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">setDescript</span><span class="params">(<span class="keyword">const</span> QString&amp; newDescript)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">QString <span class="title">compilerVendor</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">setCompilerVendor</span><span class="params">(<span class="keyword">const</span> QString&amp; newCompilerVendor)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">splashShow</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setSplashShow</span><span class="params">(<span class="keyword">bool</span> newSplashShow)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">float</span> <span class="title">scale</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>  <span class="title">setScale</span><span class="params">(<span class="keyword">float</span> newScale)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">ratio</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>   <span class="title">setRatio</span><span class="params">(<span class="keyword">double</span> newRatio)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">QStringList <span class="title">customs</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>		<span class="title">setCustoms</span><span class="params">(<span class="keyword">const</span> QStringList&amp; newCustoms)</span></span>;</span><br><span class="line"></span><br><span class="line">signals:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">nameChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">appVersionChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">lasterVersionChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">buildDateTimeChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">buildRevisionChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">copyRightChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">descriptChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">compilerVendorChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">splashShowChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">scaleChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">ratioChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">customsChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	QString m_name;</span><br><span class="line">	QString m_appVersion;</span><br><span class="line">	QString m_lasterVersion;</span><br><span class="line">	QString m_buildDateTime;</span><br><span class="line">	QString m_buildRevision;</span><br><span class="line">	QString m_copyRight;</span><br><span class="line">	QString m_descript;</span><br><span class="line">	QString m_compilerVendor;</span><br><span class="line">	<span class="keyword">bool</span>	m_splashShow;</span><br><span class="line">	<span class="keyword">float</span>	m_scale;</span><br><span class="line">	<span class="keyword">double</span>	m_ratio;</span><br><span class="line">	QStringList m_customs;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QString <span class="title">AppInfo_Old::name</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setName</span><span class="params">(<span class="keyword">const</span> QString&amp; newName)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_name == newName)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_name = newName;</span><br><span class="line">	<span class="function">emit <span class="title">nameChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QString <span class="title">AppInfo_Old::appVersion</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_appVersion;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setAppVersion</span><span class="params">(<span class="keyword">const</span> QString&amp; newAppVersion)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_appVersion == newAppVersion)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_appVersion = newAppVersion;</span><br><span class="line">	<span class="function">emit <span class="title">appVersionChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QString <span class="title">AppInfo_Old::lasterVersion</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_lasterVersion;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setLasterVersion</span><span class="params">(<span class="keyword">const</span> QString&amp; newLasterVersion)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_lasterVersion == newLasterVersion)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_lasterVersion = newLasterVersion;</span><br><span class="line">	<span class="function">emit <span class="title">lasterVersionChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QString <span class="title">AppInfo_Old::buildDateTime</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_buildDateTime;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setBuildDateTime</span><span class="params">(<span class="keyword">const</span> QString&amp; newBuildDateTime)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_buildDateTime == newBuildDateTime)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_buildDateTime = newBuildDateTime;</span><br><span class="line">	<span class="function">emit <span class="title">buildDateTimeChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QString <span class="title">AppInfo_Old::buildRevision</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_buildRevision;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setBuildRevision</span><span class="params">(<span class="keyword">const</span> QString&amp; newBuildRevision)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_buildRevision == newBuildRevision)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_buildRevision = newBuildRevision;</span><br><span class="line">	<span class="function">emit <span class="title">buildRevisionChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QString <span class="title">AppInfo_Old::copyRight</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_copyRight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setCopyRight</span><span class="params">(<span class="keyword">const</span> QString&amp; newCopyRight)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_copyRight == newCopyRight)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_copyRight = newCopyRight;</span><br><span class="line">	<span class="function">emit <span class="title">copyRightChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QString <span class="title">AppInfo_Old::descript</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_descript;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setDescript</span><span class="params">(<span class="keyword">const</span> QString&amp; newDescript)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_descript == newDescript)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_descript = newDescript;</span><br><span class="line">	<span class="function">emit <span class="title">descriptChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QString <span class="title">AppInfo_Old::compilerVendor</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_compilerVendor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setCompilerVendor</span><span class="params">(<span class="keyword">const</span> QString&amp; newCompilerVendor)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_compilerVendor == newCompilerVendor)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_compilerVendor = newCompilerVendor;</span><br><span class="line">	<span class="function">emit <span class="title">compilerVendorChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">AppInfo_Old::splashShow</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_splashShow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setSplashShow</span><span class="params">(<span class="keyword">bool</span> newSplashShow)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_splashShow == newSplashShow)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_splashShow = newSplashShow;</span><br><span class="line">	<span class="function">emit <span class="title">splashShowChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">float</span> <span class="title">AppInfo_Old::scale</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_scale;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setScale</span><span class="params">(<span class="keyword">float</span> newScale)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (qFuzzyCompare(m_scale, newScale))</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_scale = newScale;</span><br><span class="line">	<span class="function">emit <span class="title">scaleChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">AppInfo_Old::ratio</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_ratio;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setRatio</span><span class="params">(<span class="keyword">double</span> newRatio)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (qFuzzyCompare(m_ratio, newRatio))</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_ratio = newRatio;</span><br><span class="line">	<span class="function">emit <span class="title">ratioChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> QStringList <span class="title">AppInfo_Old::customs</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m_customs;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">AppInfo_Old::setCustoms</span><span class="params">(<span class="keyword">const</span> QStringList&amp; newCustoms)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_customs == newCustoms)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	m_customs = newCustoms;</span><br><span class="line">	<span class="function">emit <span class="title">customsChanged</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>从我刚开始接触Qt不久，就看到各种大佬在尝试写一些宏，来解决这个问题。</p>
+<p>但是一直都没有看到一份我觉得比较满意的。</p>
+<p>这次我把我在项目中长期验证过的轮子也分享出来，看看能不能杀死这个比赛。</p>
+<p>先来看一下最终效果吧</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppInfo</span> :</span> <span class="keyword">public</span> QObject</span><br><span class="line">&#123;</span><br><span class="line">	Q_OBJECT</span><br><span class="line"></span><br><span class="line">	AUTO_PROPERTY(QString, appName, <span class="string">""</span>)</span><br><span class="line">	AUTO_PROPERTY(QString, appVersion, <span class="string">""</span>)</span><br><span class="line">	AUTO_PROPERTY(QString, latestVersion, <span class="string">""</span>)</span><br><span class="line">	AUTO_PROPERTY(QString, buildDateTime, <span class="string">""</span>)</span><br><span class="line">	AUTO_PROPERTY(QString, buildRevision, <span class="string">""</span>)</span><br><span class="line">	AUTO_PROPERTY(QString, copyRight, <span class="string">""</span>)</span><br><span class="line">	AUTO_PROPERTY(QString, descript, <span class="string">""</span>)</span><br><span class="line">	AUTO_PROPERTY(QString, compilerVendor, <span class="string">""</span>)</span><br><span class="line">	AUTO_PROPERTY(<span class="keyword">bool</span>, splashShow, <span class="literal">false</span>)</span><br><span class="line">	AUTO_PROPERTY(<span class="keyword">float</span>, scale, <span class="number">1.0f</span>)</span><br><span class="line">	AUTO_PROPERTY(<span class="keyword">double</span>, ratio, <span class="number">14.0</span> / <span class="number">9.0</span>)</span><br><span class="line">	AUTO_PROPERTY(QStringList, customs, &#123;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="title">AppInfo</span><span class="params">(QObject* parent = <span class="literal">nullptr</span>)</span></span>;</span><br><span class="line">	<span class="keyword">virtual</span> ~AppInfo() <span class="keyword">override</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这是我封装的AUTO_PROPERTY宏，一个属性只要这一行就够了，非常的简洁了。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="QObject属性"><a href="#QObject属性" class="headerlink" title="QObject属性"></a>QObject属性</h3><p>QObject属性的本质，就是在常规的C++成员函数上做了一些“信号”、“槽”相关的特殊标记，外部通过信号-槽动态调用这些标记过的函数。</p>
+<p>有一个叫moc的可执行程序，在编译之前先解析这些特殊标记，生成一些额外的c++代码， 编译链接的时候加上这些额外的代码，就实现了信号-槽的功能。</p>
+<p>(简单来说，额外的代码中，记录了标记过的函数在这个对象中的函数指针的偏移，其它地方需要调用的时候就通过偏移量找到对应的函数指针)</p>
+<h4 id="常规类成员函数"><a href="#常规类成员函数" class="headerlink" title="常规类成员函数"></a>常规类成员函数</h4><p>常规的C++代码如下，就是很基本的set和get函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppInfo</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">const</span> QString&amp; <span class="title">appName</span><span class="params">()</span> <span class="keyword">const</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> mAppName</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">void</span> setAppName(<span class="keyword">const</span> QString&amp; name) </span><br><span class="line">	&#123;</span><br><span class="line">		mAppName = name;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	QString mAppName;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Qt加的特殊标记"><a href="#Qt加的特殊标记" class="headerlink" title="Qt加的特殊标记"></a>Qt加的特殊标记</h4><p>Qt 定义了一些宏，Q_OBJECT, 以及 Q_SIGNAL 、 Q_SLOT 、Q_INVOKABLE 等等</p>
+<p>(使用signals 或者 SLOTS等关键字可以批量定义，原理是一样的)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppInfo</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	Q_OBJECT</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">Q_SLOT <span class="keyword">const</span> QString&amp; <span class="title">appName</span><span class="params">()</span> <span class="keyword">const</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> mAppName</span><br><span class="line">	&#125;</span><br><span class="line">	Q_SLOT <span class="keyword">void</span> setAppName(<span class="keyword">const</span> QString&amp; name) </span><br><span class="line">	&#123;</span><br><span class="line">		mAppName = name;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	QString mAppName;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这样标记了以后，就可以被外部动态调用了。</p>
+<h4 id="set函数的通知"><a href="#set函数的通知" class="headerlink" title="set函数的通知"></a>set函数的通知</h4><p>set函数成功修改了成员的时候，需要对外部做出通知，于是增加了一个判断和信号</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">Q_SIGNAL <span class="keyword">void</span> <span class="title">appNameChanged</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">Q_SLOT <span class="keyword">void</span> <span class="title">setAppName</span><span class="params">(<span class="keyword">const</span> QString&amp; name)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (mAppName != name) </span><br><span class="line">	&#123;</span><br><span class="line">		mAppName = name;</span><br><span class="line">		<span class="function">emit <span class="title">appNameChanged</span><span class="params">()</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的信号可以简单理解为回调函数即可。</p>
+<p>Q_PROPERTY宏 对这些属性进一步做了标记，指定哪个是get、哪个是set函数、哪个是changed信号。</p>
+<h3 id="搞一套宏"><a href="#搞一套宏" class="headerlink" title="搞一套宏"></a>搞一套宏</h3><p>上面说明了一个属性需要的成员函数，十几个属性也是一样的做法，只不过名字和类型不同。</p>
+<p>这里可以用c++的宏，进行提取。</p>
+<h4 id="简易成员函数的宏"><a href="#简易成员函数的宏" class="headerlink" title="简易成员函数的宏"></a>简易成员函数的宏</h4><p>成员变量定义的宏</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PROP_MEM(T, NAME, InitValue) T m_##NAME = InitValue;</span></span><br></pre></td></tr></table></figure>
+<p>两个#号是c++宏的常规用法，可以把变量连起来。</p>
+<p>由于宏不好实现首字母大写，所以这里用了m_ (m和下划线) 做前缀的命名风格。</p>
+<p>再来set和get成员函数的宏。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MEM_GET(T, NAME)</span></span><br><span class="line">	const T&amp; NAME() const   \</span><br><span class="line">	&#123;						\</span><br><span class="line">		<span class="keyword">return</span> m_##NAME;	\</span><br><span class="line">	&#125;						</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MEM_SET(T, NAME)</span></span><br><span class="line">	<span class="keyword">void</span> set_##NAME(<span class="keyword">const</span> T&amp;value) 	\</span><br><span class="line">	&#123;								\</span><br><span class="line">		m_##NAME = value;			\</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有了这三个宏定义，就可以组合出一份成员变量及函数的完整定义了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AUTO_MEM(T, NAME, InivValue) 	\</span></span><br><span class="line"><span class="keyword">public</span>:									\</span><br><span class="line">	MEM_SET(T, NAME)					\</span><br><span class="line">	MEM_GET(T, NAME)					\</span><br><span class="line"><span class="keyword">private</span>:								\</span><br><span class="line">	PROP_MEM(T, NAME, InitValue)</span><br></pre></td></tr></table></figure>
+
+<p>这样只要一行AUTO_MEM 就可以完成 成员变量、get函数、set函数了。</p>
+<h4 id="Qt信号槽的宏"><a href="#Qt信号槽的宏" class="headerlink" title="Qt信号槽的宏"></a>Qt信号槽的宏</h4><p>Qt的信号，可以当作普通的get函数，加一个信号标记即可。</p>
+<p>所以信号的宏这样写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PROP_CHANGE(T, NAME) Q_SIGNAL void NAME##Changed(const T&amp; value);</span><br></pre></td></tr></table></figure>
+<p>set函数在原来的基础上，增加一个比较操作，成员变量实际有变化时才更新成员，更新后发出信号。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PROP_SET(T, NAME)</span></span><br><span class="line">	Q_SLOT <span class="keyword">void</span> set_##NAME(<span class="keyword">const</span> T&amp;value) 	\</span><br><span class="line">	&#123;										\</span><br><span class="line">		<span class="keyword">if</span> (m_##NAME == value)				\</span><br><span class="line">		&#123;									\</span><br><span class="line">			<span class="keyword">return</span>;							\</span><br><span class="line">		&#125;									\</span><br><span class="line">		m_##NAME = value;					\</span><br><span class="line">		emit NAME##Changed(value);			\</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>set函数要当作槽函数的话，函数前面加一个Q_SLOT标记即可。</p>
+<p>然后组合到一起，补一个Q_PROPERTY的定义，就可以实现AUTO_PROPERTY了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AUTO_PROPERTY(T, NAME, InitValue) 									\</span></span><br><span class="line"><span class="keyword">private</span>:																	\</span><br><span class="line">	Q_PROPERTY(T NAME READ NAME WRITE set_##NAME NOTIFY NAME##Changed)		\</span><br><span class="line"><span class="keyword">public</span>:																		\</span><br><span class="line">	PROP_GET(T, NAME);														\</span><br><span class="line">	PROP_SET(T, NAME);														\</span><br><span class="line">	PROP_CHANGED(T, NAME);													\</span><br><span class="line"><span class="keyword">private</span>:																	\</span><br><span class="line">	PROP_MEM(T, NAME, InitValue)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="浮点数比较大小"><a href="#浮点数比较大小" class="headerlink" title="浮点数比较大小"></a>浮点数比较大小</h4><p>上面的set函数中，比较是否相等直接用的 “不等于操作” 进行判断的，如果遇到浮点数，就会存在误差。</p>
+<p>因此需要加强一下，使用浮点数专用的比较操作。</p>
+<p>这里用一点C++模板的特性，先写一个通用的比较器</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Compare</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">isEqual</span><span class="params">(<span class="keyword">const</span> T&amp; t1, <span class="keyword">const</span> T&amp; t2)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> t1 == t2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后 模板偏特化 写 float和double类型的比较器,具体比较操作用Qt的模糊比较qFuzzyCompare</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// float 比较器。</span></span><br><span class="line"><span class="keyword">template</span> &lt;&gt;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Compare</span>&lt;float&gt;</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">isEqual</span><span class="params">(<span class="keyword">float</span> f1, <span class="keyword">float</span> f2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> qFuzzyCompare(f1, f2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// double 比较器。</span></span><br><span class="line"><span class="keyword">template</span> &lt;&gt;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Compare</span>&lt;double&gt;</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">isEqual</span><span class="params">(<span class="keyword">double</span> d1, <span class="keyword">double</span> d2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> qFuzzyCompare(d1, d2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>最后把PROP_SET中的“比较操作”换成“比较器”就行了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PROP_SET(T, NAME)</span></span><br><span class="line">	Q_SLOT <span class="keyword">void</span> set_##NAME(<span class="keyword">const</span> T&amp;value) 			\</span><br><span class="line">	&#123;												\</span><br><span class="line">		<span class="keyword">if</span> (Compare&lt;T&gt;::isEqual(m_##NAME, value))	\</span><br><span class="line">		&#123;											\</span><br><span class="line">			<span class="keyword">return</span>;									\</span><br><span class="line">		&#125;											\</span><br><span class="line">		m_##NAME = value;							\</span><br><span class="line">		emit NAME##Changed(value);					\</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行环境适配"><a href="#运行环境适配" class="headerlink" title="运行环境适配"></a>运行环境适配</h3><p>这套宏在qmake和cmake环境中，都可以直接使用。</p>
+<p>在visual studio解决方案中使用时，使用qt-vsaddin插件的情况下，</p>
+<p>可能会出现链接失败的情况，需要给插件的moc配置项中设置参数Compiler Flavor为 “MSVC”。</p>
+<p><img src="/images/Qt16/img4.png" alt="预览"></p>
+<p>这个插件的moc参数flavor默认为空，为空则是按照”Unix”生成,不符合msvc的编译特性，所以会编不过。</p>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><a href="https://github.com/jaredtao/TaoQuick.git" target="_blank" rel="noopener">https://github.com/jaredtao/TaoQuick.git</a></p>
+<p><a href="https://gitee.com/jaredtao/TaoQuick.git" target="_blank" rel="noopener">https://gitee.com/jaredtao/TaoQuick.git</a></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/weixin.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        很有收获,请作者喝杯茶
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            文章采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可, 转载请注明出处 © <a href="https://jaredtao.github.io" target="_blank">武威的涛哥</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/01/21/Qml/%E7%8E%A9%E8%BD%ACQtQuick(2)-%E9%BB%98%E8%AE%A4%E6%B8%B2%E6%9F%93%E5%99%A8/" class="next-post btn btn-default" title='玩转QtQuick(2)-默认渲染器'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            玩转QtQuick(2)-默认渲染器</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'qegD4552u6FU9HoNDvRsonko-gzGzoHsz',
+    appKey: 'eitB2FV5n2qyMHcDM7x6EQpt',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#痛点"><span class="toc-text">痛点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#QObject属性"><span class="toc-text">QObject属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常规类成员函数"><span class="toc-text">常规类成员函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Qt加的特殊标记"><span class="toc-text">Qt加的特殊标记</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set函数的通知"><span class="toc-text">set函数的通知</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搞一套宏"><span class="toc-text">搞一套宏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简易成员函数的宏"><span class="toc-text">简易成员函数的宏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Qt信号槽的宏"><span class="toc-text">Qt信号槽的宏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浮点数比较大小"><span class="toc-text">浮点数比较大小</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行环境适配"><span class="toc-text">运行环境适配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源代码"><span class="toc-text">源代码</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    访问量:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    访客数:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/assets/tagcanvas.min.js?rev=2.9.js"></script>
+
+<script>
+var tagOption = {
+    textColour: '#444', // 字体颜色
+    outlineMethod: 'block', // 选中模式
+    outlineColour: '#FFDAB9', // 选中模式的颜色
+    interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+    textHeight: 13,
+    outlineRadius: 3,
+    freezeActive: true || '', // 选中的标签是否继续滚动
+    frontSelect: true || '', // 不选标签云后部的标签
+    initial: [0.1, -0.1],
+    depth: 0.5,
+    decel: 0.95,
+    maxSpeed: 0.03,
+    reverse: true || '', // 是否反向触发
+    fadeIn: 500, // 进入动画时间
+    wheelZoom: false || '' // 是否启用鼠标滚轮
+}
+TagCanvas.Start('tag-cloud-3d', '', tagOption);
+</script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
